@@ -20,22 +20,13 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.6.v20151106</version>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
                 <configuration>
-                    <jettyXml>${basedir}/etc/jetty/jetty.xml,${basedir}/etc/jetty/jetty-ssl.xml,${basedir}/etc/jetty/jetty-https.xml</jettyXml>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>org.eclipse.jetty.annotations.maxWait</name>
-                            <value>300</value>
-                        </systemProperty>
-                    </systemProperties>
-                    <webApp>
-                        <contextPath>/sample</contextPath>
-                        <overrideDescriptor>${basedir}/etc/jetty/web.xml</overrideDescriptor>
-                    </webApp>
-                    <jvmArgs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5002,server=y,suspend=n</jvmArgs>
+                    <path>/</path>
+                    <port>8088</port>
+                    <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
             </plugin>
         </plugins>
